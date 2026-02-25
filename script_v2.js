@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Cetak Biru Integrasi Tabel Entitas (ERD)",
             icon: "fa-solid fa-sitemap",
-            image: "media/Affan11.png",
+            image: "Media/Affan11.png",
             author: "Affan (11)",
             desc: "Peta relasional matang membagi informasi menjadi tabel Buku, Siswa, dan Rak tanpa redudansi sampah data ganda.",
             tujuan: [
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Mesin Logika Sirkulasi Pustaka",
             icon: "fa-solid fa-calculator",
-            image: "media/Rayhan11.png",
+            image: "Media/Rayhan11.png",
             author: "Rayhan (11)",
             desc: "Kerangka algoritma di balik layar yang sanggup mencatat masuknya buku, melacak yang dipinjam, hingga pendataan hitungan telat harian.",
             tujuan: [
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Pusat Endpoint Pelayanan Awan Siap Rilis",
             icon: "fa-solid fa-rocket",
-            image: "media/Muadz11.png",
+            image: "Media/Muadz11.png",
             author: "Mu'adz (11)",
             desc: "Puncak kebanggaan! Database sukses di Orbitkan ke penyimpanan internet publik berkecepatan tinggi yang terus menyala dan menjawab data ke Aplikasi Frontend (API).",
             tujuan: [
