@@ -1,0 +1,365 @@
+:root {
+    --bg-main: #121212;
+    --text-primary: #ededed;
+    --text-secondary: #a0a0a0;
+    --supa-green: #3ECF8E;
+    --supa-dark: #24b47e;
+    --supa-blue: #2A4365;
+    --supa-bg-card: #1c1c1c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: var(--bg-main) url('data:image/svg+xml;utf8,<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.03)"/></svg>');
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* Header Centered premium */
+.roadmap-header {
+    text-align: center;
+    margin-bottom: 80px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    filter: drop-shadow(0 10px 15px rgba(62, 207, 142, 0.3));
+}
+
+.supabase-glow {
+    color: var(--supa-green);
+    text-shadow: 0 0 20px rgba(62, 207, 142, 0.4);
+}
+
+.vision-text {
+    color: var(--supa-green);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(62, 207, 142, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(62, 207, 142, 0.2);
+}
+
+.title {
+    color: #FFFFFF;
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.header-desc {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+
+/* Wrapper SVG Terpusat */
+.roadmap-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.roadmap-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px 0;
+}
+
+.root-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Baris Grid Item */
+#timeline-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.node-row {
+    display: flex;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.3, 0.5, 0.2, 1);
+}
+
+.node-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Susunan Desktop Berselang-seling */
+.node-row.left {
+    justify-content: flex-start;
+    padding-right: 50%;
+}
+
+.node-row.right {
+    justify-content: flex-end;
+    padding-left: 50%;
+}
+
+/* Gaya Premium Card Material Dark */
+.node-card {
+    width: 100%;
+    max-width: 440px;
+    /* Lebar optimal desktop */
+    background: var(--supa-bg-card);
+    backdrop-filter: blur(10px);
+    padding: 25px 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    z-index: 2;
+    /* Di atas garis SVG */
+}
+
+.node-row.left .node-card {
+    margin-right: 40px;
+}
+
+.node-row.right .node-card {
+    margin-left: 40px;
+}
+
+.node-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(62, 207, 142, 0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Node Header & Icon */
+.node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.node-icon {
+    width: 55px;
+    height: 55px;
+    background: rgba(62, 207, 142, 0.08);
+    /* Transparent Green */
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--supa-green);
+    border: 1px solid rgba(62, 207, 142, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+}
+
+.node-badge {
+    background: #111;
+    color: #ededed;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.node-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #FFF;
+    line-height: 1.3;
+}
+
+/* Konten Teks */
+.node-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Box Tujuan Pembelajaran */
+.tujuan-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    padding: 15px 20px;
+    border-left: 4px solid var(--supa-green);
+}
+
+.tujuan-title {
+    color: #FFF;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tujuan-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tujuan-list li {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+.tujuan-list i {
+    margin-top: 3px;
+}
+
+/* Dot penyambung ke garis akar */
+.connector-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #111;
+    border: 4px solid var(--supa-green);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0 0 10px rgba(62, 207, 142, 0.4);
+}
+
+
+/* Pewarnaan Dinamis Kategori Beben (Bab) */
+.node-row[data-group="DL"] .node-icon {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60A5FA;
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+}
+
+.node-row[data-group="DL"] .connector-dot {
+    border-color: #60A5FA;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.node-row[data-group="DL"] .tujuan-box {
+    border-left-color: #60A5FA;
+}
+
+.node-row[data-group="RQ"] .node-icon {
+    background: rgba(245, 158, 11, 0.1);
+    color: #FBBF24;
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 8px 16px rgba(245, 158, 11, 0.15);
+}
+
+.node-row[data-group="RQ"] .connector-dot {
+    border-color: #FBBF24;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.node-row[data-group="RQ"] .tujuan-box {
+    border-left-color: #FBBF24;
+}
+
+
+/* --- TAMPILAN MOBILE: Semua sejajar kiri dengan Garis SVG --- */
+@media (max-width: 900px) {
+    .page-wrapper {
+        padding: 40px 15px;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .header-desc {
+        font-size: 0.95rem;
+    }
+
+    .roadmap-wrapper {
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .node-row.left,
+    .node-row.right {
+        justify-content: flex-start;
+        padding-left: 60px;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .node-row.left .node-card,
+    .node-row.right .node-card {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .node-card {
+        padding: 20px 15px;
+    }
+
+    #timeline-container {
+        gap: 30px;
+        width: 100%;
+    }
+}

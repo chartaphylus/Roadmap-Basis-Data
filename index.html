@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Database (SupaBase)</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .toggle-version {
+            margin-top: 30px;
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .toggle-btn {
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toggle-btn.active {
+            background: var(--supa-bg-card);
+            color: var(--supa-green);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(62, 207, 142, 0.3);
+        }
+
+        .toggle-btn:hover:not(.active) {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="roadmap-header">
+            <div class="header-icon"><i class="fas fa-database supabase-glow"></i></div>
+            <h3 class="vision-text">Backend & Data Structure</h3>
+            <h1 class="title">Roadmap Basis Data</h1>
+            <h2 class="subtitle">Edisi Lengkap ERD & Supabase</h2>
+            <p class="header-desc">Mengakar mulai dari dasar rancangan relasional hingga implementasi
+                Backend-as-a-Service (BaaS) menggunakan Supabase.</p>
+
+            <div class="toggle-version">
+                <a href="index.html" class="toggle-btn active"><i class="fa-solid fa-graduation-cap"></i> Versi Teknik
+                    Server</a>
+                <a href="index_v2.html" class="toggle-btn"><i class="fa-solid fa-rocket"></i> Versi Pencapaian
+                    Output</a>
+            </div>
+        </header>
+
+        <section class="roadmap-section">
+            <div class="roadmap-wrapper">
+                <svg class="root-svg" id="timeline-svg">
+                    <defs>
+                        <linearGradient id="root-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#3ECF8E" />
+                            <stop offset="50%" stop-color="#24b47e" />
+                            <stop offset="100%" stop-color="#1E3A8A" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div id="timeline-container">
+                    <!-- Konten div digenerate dari script.js -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
